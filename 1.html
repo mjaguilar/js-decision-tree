@@ -1,0 +1,237 @@
+    <html>
+	<head>
+		<meta charset="ISO-8859-15">
+    	<title>How many participants do you need?</title>
+    	<script type="text/javascript" src="1.js"></script>
+    	<link rel="stylesheet" href="1.css" />
+        <link rel="stylesheet" href="reset.css" />
+	</head>
+	<body>
+    	<h1>How many participants do you need for your next study?</h1>
+    	<div id="scene_1" class="current block">
+    		<h2>Are you going to compare data?<span id="option_1"></span></h2>
+    		<div class="content">
+    			<input name="sel_1" type="radio" id="scene_1_yes" onclick="changeScene(2)">
+    				<label for="scene_1_yes" id="scene_1_2">Yes</label>
+    				<div class="exp_yes">
+    					<dl>
+    						<dt>Start here if your goal is to compare data:</dt>
+    						<dd>You'll compare two or more groups results</dd>
+    						<dd>You'll compare one group results with a benchmark proportion</dd>
+    					</dl>
+    				</div>
+    			<input name="sel_1" type="radio" id="scene_1_no" onclick="changeScene(3)">
+    				<label for="scene_1_no" id="scene_1_3">No</label><div class="exp_yes">
+    					<dl class="exp_no">
+    						<dt>This option is for you when:</dt>
+    						<dd>You'll estimate a parameter with a specified precision.</dd>
+    						<dd>You'll work on problem discovery to estimate sample sizes to find a specified percentage of usability problems with a specified probability of occurence.</dd>
+    					</dl>
+    				</div>
+    		</div>
+    	</div>
+
+    	<div id="scene_2" class="hidden">
+    		<h2>Are you comparing the results from different groups?<span id="option_2"></span></h2>
+    		<div class="content">
+    			<input name="sel_2" type="radio" id="scene_2_yes" onclick="changeScene(21)">
+    				<label for="scene_1_yes" id="scene_2_21">Yes</label>
+    				<div class="exp_yes">
+    					<dl>
+    						<dt>You have two or more groups to compare results</dt>
+    					</dl>
+    				</div>
+    			<input name="sel_2" type="radio" id="scene_1_no" onclick="changeScene(22)">
+    				<label for="scene_2_no" id="scene_2_22">No</label>
+    				<div class="exp_no">
+    					<dl>
+    						<dt>You'll compare one group results with a benchmark proportion</dt>
+    					</dl>
+    				</div>
+    		</div>
+    	</div>
+
+    	<div id="scene_3" class="hidden">
+    		<h2>Are you estimating a parameter with a specified precision?<span id="option_3"></span></h2>
+    		<div class="content">
+    			<input name="sel_3" type="radio" id="scene_3_yes" onclick="changeScene(31)">
+    				<label for="scene_3_yes" id="scene_3_31">Yes</label>
+    				<div class="exp_yes">
+    					<dl>
+    						<dt>Do you want to estimate completion rates with a margin of error of no more than certain percentage or completion times with a margin of error of no more than 'n' seconds</dt>
+    					</dl>
+    				</div>
+    			<input name="sel_3" type="radio" id="scene_3_no" onclick="changeScene(32)">
+    				<label for="scene_3_no" id="scene_3_32">No</label>
+    				<div class="exp_no">
+    					<dl>
+    						<dt>Calculate your sample size with <em>Problem discovery sample size</em></dt>
+    					</dl>
+    				</div>
+    		</div>
+    	</div>
+
+    	<div id="scene_21" class="hidden">
+    		<h2>Do you have different users in each group?<span id="option_21"></span></h2>
+    		<div class="content">
+    			<input name="sel_21" type="radio" id="scene_21_yes" onclick="changeScene(211)">
+    				<label for="scene_21_yes" id="scene_21_211">Yes</label>
+    				<div class="exp_yes">
+    					<dl>
+    						<dt>Your sample is divided in different groups</dt>
+    					</dl>
+    				</div>
+    			<input name="sel_21" type="radio" id="scene_21_no" onclick="changeScene(212)">
+    				<label for="scene_21_no" id="scene_21_212">No</label>
+    				<div class="exp_no">
+    					<dl>
+    						<dt>Your are going to work with the same group of participants in different ocassions</dt>
+    					</dl>
+    				</div>
+    		</div>
+    	</div>
+
+    	<div id="scene_22" class="hidden">
+    		<h2>Results will be binary data?<span id="option_22"></span></h2>
+    		<div class="content">
+    			<input name="sel_22" type="radio" id="scene_22_yes" onclick="changeScene(221)">
+    				<label for="scene_22_yes" id="scene_22_221">Yes</label>
+    				<div class="exp_yes">
+    					<dl>
+    						<dt>Calculate your sample size with <em>Proportion to criterion</em></dt>
+    					</dl>
+    				</div>
+    			<input name="sel_22" type="radio" id="scene_22_no" onclick="changeScene(222)">
+    				<label for="scene_22_no" id="scene_22_222">No</label>
+    				<div class="exp_no">
+    					<dl>
+    						<dt>Calculate your sample size with <em>Mean to criterion</em></dt>
+    					</dl>
+    				</div>
+    		</div>
+    	</div>
+
+    	<div id="scene_31" class="hidden">
+    		<h2>Results will be binary data?<span id="option_31"></span></h2>
+    		<div class="content">
+    			<input name="sel_31" type="radio" id="scene_31_yes" onclick="changeScene(311)">
+    				<label for="scene_31_yes" id="scene_31_311">Yes</label>
+    				<div class="exp_yes">
+    					<dl>
+    						<dt>Calculate your sample size with <em>Margin of error proportion</em></dt>
+    					</dl>
+    				</div>
+    			<input name="sel_31" type="radio" id="scene_31_no" onclick="changeScene(312)">
+    				<label for="scene_31_no" id="scene_31_312">No</label>
+    				<div class="exp_no">
+    					<dl>
+    						<dt>Calculate your sample size with <em>Margin of error mean</em></dt>
+    					</dl>
+    				</div>
+    		</div>
+    	</div>
+
+    	<div id="scene_32" class="hidden">
+    		<h2>Problem discovery sample size</h2>
+    		<div class="content">
+    			<h3>Use the equation: <img src="formula32.png" alt="image of the formula"></h3>
+    		</div>
+    	</div>
+
+    	<div id="scene_211" class="hidden">
+    		<h2>Results will be binary data?<span id="option_211"></span></h2>
+    		<div class="content">
+    			<input name="sel_211" type="radio" id="scene_211_yes" onclick="changeScene(2111)">
+    				<label for="scene_211_yes" id="scene_211_2111">Yes</label>
+    				<div class="exp_yes">
+    					<dl>
+    						<dt>Calculate your sample size with <em>Proportions</em></dt>
+    					</dl>
+    				</div>
+    			<input name="sel_211" type="radio" id="scene_211_no" onclick="changeScene(2112)">
+    				<label for="scene_211_no" id="scene_211_2112">No</label>
+    				<div class="exp_no">
+    					<dl>
+    						<dt>Calculate your sample size with <em>Means</em></dt>
+    					</dl>
+    				</div>
+    		</div>
+    	</div>
+
+    	<div id="scene_212" class="hidden">
+    		<h2>Results will be binary data?<span id="option_212"></span></h2>
+    		<div class="content">
+    			<input name="sel_212" type="radio" id="scene_212_yes" onclick="changeScene(2121)">
+    				<label for="scene_212_yes" id="scene_212_2121">Yes</label>
+    				<div class="exp_yes">
+    					<dl>
+    						<dt>Calculate your sample size with <em>Paired proportions</em></dt>
+    					</dl>
+    				</div>
+    			<input name="sel_212" type="radio" id="scene_212_no" onclick="changeScene(2122)">
+    				<label for="scene_212_no" id="scene_212_2122">No</label>
+    				<div class="exp_no">
+    					<dl>
+    						<dt>Calculate your sample size with <em>Paired Means</em></dt>
+    					</dl>
+    				</div>
+    		</div>
+    	</div>
+
+    	<div id="scene_221" class="hidden">
+    		<h2>Proportion to criterion</h2>
+    		<div class="content">
+    			<h3>Use the equation: <img src="formula221.png" alt="image of the formula"></h3>
+    		</div>
+    	</div>
+
+    	<div id="scene_222" class="hidden">
+    		<h2>Mean to criterion</h2>
+    		<div class="content">
+    			<h3>Use the equation: <img src="formula222.png" alt="image of the formula"></h3>
+    		</div>
+    	</div>
+
+    	<div id="scene_311" class="hidden">
+    		<h2>Margin of error proportion</h2>
+    		<div class="content">
+    			<h3>Use the equation: <img src="formula311.png" alt="image of the formula"></h3>
+    		</div>
+    	</div>
+
+    	<div id="scene_312" class="hidden">
+    		<h2>Margin of error mean</h2>
+    		<div class="content">
+    			<h3>Use the equation: <img src="formula312.png" alt="image of the formula"></h3>
+    		</div>
+    	</div>
+
+    	<div id="scene_2111" class="hidden">
+    		<h2>Proportions</h2>
+    		<div class="content">
+    			<h3>Use the equation: <img src="formula2111.png" alt="image of the formula"></h3>
+    		</div>
+    	</div>
+
+    	<div id="scene_2112" class="hidden">
+    		<h2>Means</h2>
+    		<div class="content">
+    			<h3>Use the equation: <img src="formula2112.png" alt="image of the formula"></h3>
+    		</div>
+    	</div>
+
+    	<div id="scene_2121" class="hidden">
+    		<h2>Paired proportions</h2>
+    		<div class="content">
+    			<h3>Use the equation: <img src="formula2121.png" alt="image of the formula"></h3>
+    		</div>
+    	</div>
+
+    	<div id="scene_2122" class="hidden">
+    		<h2>Paired Means</h2>
+    		<div class="content">
+    			<h3>Use the equation: <img src="formula2122.png" alt="image of the formula"></h3>
+    		</div>
+    	</div>
+	</body>
+</html>

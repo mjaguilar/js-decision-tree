@@ -1,0 +1,54 @@
+body{
+    background: #efefef;
+    font-size: 24px;
+    font-family: Helvetica, Arial, sans-serif;
+    letter-spacing: 0; 
+}
+h1{
+    width:75%;
+    margin: 1em auto;
+    font-size: 1em;
+    color: #333;
+}
+h2{
+    font-size: 1em;
+}
+h3{
+    font-size: 1em;
+    font-weight: normal;
+}
+dl{
+}
+dl dt{
+
+}
+dl dd{
+
+}
+.block{
+    width:75%;
+    margin: 1em auto;
+    border-radius: 0.5em 0.5em;
+    padding: 0.5em;
+}
+
+.current {
+    display: block;
+    background-color: #FFF;
+    border: 1px solid #CCC;
+    color: #333;
+}
+.folded {
+    display: block;
+    background-color: #999;
+    color: #FFF;
+}
+.folded .content {
+    display: none;
+}
+.folded h2{
+
+}
+.hidden {
+    display: none;
+}
